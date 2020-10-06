@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<title>Sabrina Kirrane GFAF</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="../images/sabrinakirrane.jpg" style="width:100%" alt="Avatar">
+          <div class="w3-display-topleft w3-container w3-text-black">
+            <h2>Sabrina Kirrane</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Researcher</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Vienna, Austria</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>sabrinakirrane@gmail.com</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Academic Profile</b></p>
+          <p><b class="w3-text-teal"><a href="http://orcid.org/0000-0002-6955-7718" target="_blank">ORCID</a></b></p>
+          <p><b class="w3-text-teal"><a href="https://www.scopus.com/authid/detail.uri?authorId=53979829800" target="_blank">SCOPUS</a></b></p>
+          <p><b class="w3-text-teal"><a href="https://scholar.google.com/citations?hl=en&user=fQLZTyQAAAAJ" target="_blank">Google Scholar</a></b></p>
+          <p><b class="w3-text-teal"><a href="https://dblp.org/pid/40/10280.html" target="_blank">DBLP</a></b></p>
+          <p><b class="w3-text-teal"><a href="../data/skirrane.ttl">Turtle</a></b></p>
+          <p><b class="w3-text-teal"><a href="http://penni.wu.ac.at/ldf/myttl">LDF Server</a></b></p>
+          <br>
+        </div>
+      </div><br>
+
+
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-flag fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>About Me</h2>
+          <div class="w3-container">
+            <p><div class="w3-opacity">I'm an assistant professor at the Vienna University of Economics and Business Institute for Information Systems and New Media, where I am also a member of the Research Institute for Cryptoeconomics and the Privacy and Sustainable Computing Lab.</div></p>
+
+            <p><div class="w3-opacity">My research interests include Security, Privacy, and Policy aspects of the Next Generation Internet (NGI), Distributed and Decentralised Systems, Big Data and Data Science, with a particular focus on policy representation and reasoning (e.g., access constraints, usage policies, regulatory obligations, societal norms, business processes), and the development of transparency and trust techniques.</div>
+            </p>
+          </div>
+        </div>
+      </div><br>
+
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-star fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Navigation</h2>
+          <div class="w3-container">
+            <p><b class="w3-text-teal"><a href="../skirrane">Homepage</a></b></p>
+            <p><b class="w3-text-teal"><a href="../frameworks/gfaf.html">G-FAF Framework</a></b></p>
+            <p><b class="w3-text-teal"><a href="../frameworks/correctness.html">Correctness Framework</a></b></p>
+            <p><b class="w3-text-teal"><a href="http://penni.wu.ac.at/ldf/myttl">LDF Server</a></b></p>
+          </div>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-star fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Graph based Flexible Authorisation Framework (G-FAF)</h2>
+        <p><div class="w3-opacity">G-FAF is a general authorisation framework that can be used to deliver dynamic query results based on user credentials and to cater for the secure manipulation of linked data.</div></p>
+
+        <p><div class="w3-opacity">In G-FAF data items, access rights and authorisation subjects are represented as one or more graphs that may or may not be disjoint.</div></p>
+        <div class="w3-container">
+          <p>
+            <h3 class="w3-text-teal">Data Items</h3>
+            <div class="w3-opacity"><p>In the Semantic Web information is represented as RDF triples that are used to make statements about resources in the form of subject-predicate-object expressions. An RDF graph is a finite set of RDF triples. Named graphs are used to collectively refer to a number of RDF statements. Although there are several RDF representation formats we use nquads.</p></div>
+
+            <h3 class="w3-text-teal">Access Rights</h3>
+            <div class="w3-opacity">
+              <p>Like databases and file systems access can be restricted based on the operations that a user attempts to execute on the data items. In the case of RDF these operations take the form of: </p>
+              <ul>
+                <li>Graph query operations (SELECT, CONSTRUCT, ASK and DESCRIBE)</li>
+                <li>Graph update operations (INSERT, DELETE, DELETE/INSERT)</li>
+                <li>Graph management (DROP, COPY, MOVE and ADD)</li>
+              </ul>
+              <br/>
+              <p>Three additional access rights are required to facilitate access control administration, namely GRANT, REVOKE and FULL ACCESS:</p>
+              <ul>
+                <li>The GRANT privilege allows users to grant access to others based on their own privileges. </li>
+                <li>The REVOKE privilege allows users to revoke the access rights they have granted to others. </li>
+                <li>FULL ACCESS is a super access right that subsumes all other access rights.</li>
+              </ul>
+              <br/>
+              <p>We model the operations as one or more RDF graphs and use vocabularies such as RDFS to define a partial order over the operations.</p>
+            </div>
+
+            <h3 class="w3-text-teal">Authorisation Subjects</h3>
+            <div class="w3-opacity">
+              <p>Subject is an umbrella term used to collectively refer to different user credentials. We propose the verification of access based on credential matching, as such we make no distinction between a user playing a role as opposed to belonging to a group. Therefore, we merge both the user-group and role hierarchies and refer to them simply as authorisation subjects. Such a merge does not impact the specification or enforcement of authorisations and in fact affords a greater degree of flexibility with respect to the inclusion of additional types of user credentials. As RDF is a web based distributed data model we extend the subject definition, to include user attributes. Combined users, groups, roles and attributes can be represented as one or more RDF graphs possibly disjoint.</p>
+           </div>
+
+           <h3 class="w3-text-teal">Dataset, Authorisations, Rules and Queries</h3>
+           <div class="w3-opacity">
+             <p>Authorisations are specified as graph patterns,  propagation rules are used to ease administration, and together integrity constraints and conflict resolution policies are used to specify and enforce consistent access control policies.</p>
+             <p>For the evaluation of G-FAF we created three separate experiments to:  </p>
+             <ul>
+               <li>examine the overhead associated with access control over di.erent data sets</li>
+               <li>deduce the impact given an increasing number of authorisations</li>
+               <li>determine the performance increase for a number of propagation rules (the most expensive administration operation)</li>
+             </ul>
+             <p>We use the Berlin SPARQL Benchmark (BSBM) dataset for evaluation of the framework. The evaluation datasets, authorisation sets, rules and queries are stored on a public Google drive:
+               <a href="https://drive.google.com/drive/u/0/folders/0B_JBVb0tdwLFa3lacTlmVXV1WlU" target="_blank">gfaf@googledocs</a>.
+             </p>
+             <br/>
+             <p>Details of the evaluation can be found in the following paper:
+               <a href="../papers/ISWC 2013 Secure Manipulation of Linked Data.pdf" target="_blank">Secure Manipulation of Linked Data</a>.
+             </p>
+           </div>
+      </div>
+
+
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Powered by: <a href="https://github.com/KNowledgeOnWebScale/walder" target="_blank">Walder</a> and <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <hr>
+</footer>
+
+</body>
+</html>

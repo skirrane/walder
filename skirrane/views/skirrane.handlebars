@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<title>Sabrina Kirrane Homepage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="images/sabrinakirrane.jpg" style="width:100%" alt="Avatar">
+          <div class="w3-display-topleft w3-container w3-text-black">
+            <h2>Sabrina Kirrane</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Researcher</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Vienna, Austria</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>sabrinakirrane@gmail.com</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Academic Profile</b></p>
+          <p><b class="w3-text-teal"><a href="http://orcid.org/0000-0002-6955-7718" target="_blank">ORCID</a></b></p>
+          <p><b class="w3-text-teal"><a href="https://www.scopus.com/authid/detail.uri?authorId=53979829800" target="_blank">SCOPUS</a></b></p>
+          <p><b class="w3-text-teal"><a href="https://scholar.google.com/citations?hl=en&user=fQLZTyQAAAAJ" target="_blank">Google Scholar</a></b></p>
+          <p><b class="w3-text-teal"><a href="https://dblp.org/pid/40/10280.html" target="_blank">DBLP</a></b></p>
+          <p><b class="w3-text-teal"><a href="../data/skirrane.ttl">Turtle</a></b></p>
+          <p><b class="w3-text-teal"><a href="http://penni.wu.ac.at/ldf/myttl">LDF Server</a></b></p>
+        </div>
+      </div><br>
+
+
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-flag fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>About Me</h2>
+          <div class="w3-container">
+            <p><div class="w3-opacity">I'm an assistant professor at the Vienna University of Economics and Business Institute for Information Systems and New Media, where I am also a member of the Research Institute for Cryptoeconomics and the Privacy and Sustainable Computing Lab.</div></p>
+
+            <p><div class="w3-opacity">My research interests include Security, Privacy, and Policy aspects of the Next Generation Internet (NGI), Distributed and Decentralised Systems, Big Data and Data Science, with a particular focus on policy representation and reasoning (e.g., access constraints, usage policies, regulatory obligations, societal norms, business processes), and the development of transparency and trust techniques.</div>
+            </p>
+          </div>
+        </div>
+      </div><br>
+
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-star fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Navigation</h2>
+          <div class="w3-container">
+            <p><b class="w3-text-teal"><a href="../skirrane">Homepage</a></b></p>
+            <p><b class="w3-text-teal"><a href="../frameworks/gfaf.html">G-FAF Framework</a></b></p>
+            <p><b class="w3-text-teal"><a href="../frameworks/correctness.html">Correctness Framework</a></b></p>
+            <p><b class="w3-text-teal"><a href="http://penni.wu.ac.at/ldf/myttl">LDF Server</a></b></p>
+          </div>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-home fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Academic Affiliations</h2>
+        {{#each member}}
+          <div class="w3-opacity">{{this.description}}, {{this.title}}</div>
+          <div class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{this.temporalCoverage}}</div>
+          <hr>
+        {{/each}}
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-book fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Publications</h2>
+        <div class="w3-container">
+          {{#each publication}}
+            <p>
+              <div class="w3-text-teal"><a href="{{this.url}}" target="_blank">{{this.label}}</a></div>
+              <div class="w3-opacity">
+                {{#each this.authorlist}}
+                  {{label2}}
+                {{/each}}
+                <br/>
+                {{#each this.publication}}
+                  {{label2}}, {{year}}
+                {{/each}}
+              </div>
+            </p>
+            <hr>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-book fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Dissertations</h2>
+        <div class="w3-container">
+          {{#each thesis}}
+            <div class="w3-text-teal"> <a href="{{this.url}}" target="_blank">{{this.name}}</a></div>
+            <div class="w3-opacity">{{this.label}}</div>
+            <hr>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-microphone fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Talks</h2>
+        {{#each speaker}}
+          <div class="w3-text-teal"><a href="{{this.url}}" target="_blank">{{this.name}}</a></div>
+          <div class="w3-opacity">{{this.label}}</div>
+          <hr>
+        {{/each}}
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-users fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Academic Activities</h2>
+        <div class="w3-container">
+          <p>
+            <h3 class="w3-text-teal">Invitation Only Seminars</h3>
+            {{#each seminar}}
+              <div class="w3-opacity"><a href="{{this.url}}" target="_blank">{{this.title}}</a> - {{this.description}}</div>
+              <div class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{this.temporalCoverage}}</div>
+              <br>
+            {{/each}}
+
+            <h3 class="w3-text-teal">Editorial Board</h3>
+            {{#each editor}}
+              <div class="w3-opacity"><a href="{{this.url}}" target="_blank">{{this.title}}</a> - {{this.description}}</div>
+            {{/each}}
+
+            <h3 class="w3-text-teal">Guest Editor</h3>
+            {{#each guest-editor}}
+              <div class="w3-opacity"><a href="{{this.url}}" target="_blank">{{this.title}}</a> - {{this.description}}</div>
+            {{/each}}
+
+            <h3 class="w3-text-teal">Associate Editor</h3>
+            {{#each associate-editor}}
+              <div class="w3-opacity"><a href="{{this.url}}" target="_blank">{{this.title}}</a> - {{this.description}}</div>
+            {{/each}}
+
+            <h3 class="w3-text-teal">Organising Committees</h3>
+            {{#each oc}}
+              <div class="w3-opacity"><a href="{{this.url}}" target="_blank">{{this.title}}</a> - {{this.description}}</div>
+            {{/each}}
+
+            <h3 class="w3-text-teal">Senior Program Committees</h3>
+            {{#each spc}}
+              <div class="w3-opacity"><a href="{{this.url}}" target="_blank">{{this.title}}</a> - {{this.description}}</div>
+            {{/each}}
+
+            <h3 class="w3-text-teal">Program Committees</h3>
+            {{#each pc}}
+              <div class="w3-opacity"><a href="{{this.url}}" target="_blank">{{this.title}}</a> - {{this.description}}</div>
+            {{/each}}
+
+            <h3 class="w3-text-teal">Journal Reviews</h3>
+            {{#each journal-reviewer}}
+              <div class="w3-opacity"><a href="{{this.url}}" target="_blank">{{this.title}}</a> - {{this.description}}</div>
+            {{/each}}
+
+            <h3 class="w3-text-teal">Reviewer</h3>
+            {{#each reviewer}}
+              <div class="w3-opacity"><a href="{{this.url}}" target="_blank">{{this.title}}</a> - {{this.description}}</div>
+            {{/each}}
+          </p>
+          <hr>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-star fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Academic Projects</h2>
+        <div class="w3-container">
+          {{#each project}}
+            <p>
+              <div class="w3-text-teal">{{this.label}}</div>
+              <div class="w3-opacity">
+                {{this.abstract}}
+                  {{#each this.website}}
+                    <a href="{{this.url}}" target="_blank">{{this.url}}</a>
+                  {{/each}}
+              </div>
+            </p>
+            <hr>
+          {{/each}}
+        </div>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Powered by: <a href="https://github.com/KNowledgeOnWebScale/walder" target="_blank">Walder</a> and <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <hr>
+</footer>
+
+</body>
+</html>

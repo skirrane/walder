@@ -1,0 +1,193 @@
+openapi: 3.0.2
+info:
+  title: 'Sabrina Kirrane accountServiceHomepage'
+  version: 0.1.0
+x-walder-resources:
+  root: ./
+  views: views
+  pipe-modules: pipeModules
+  public: public
+x-walder-datasources:
+  - http://penni.wu.ac.at/ldf/myttl
+paths:
+  /skirrane:
+    get:
+      summary: Returns a list of creative works
+      x-walder-query:
+        graphql-query:
+          member: >
+            {
+              id @single
+              ... on Member {
+                title @single
+                description @single
+                temporalCoverage @single
+              }
+            }
+          publication: >
+            {
+              id @single
+              ... on Article {
+                label @single
+                url @single
+                authorlist {
+                  label2 @single }
+                publication {
+                  label2 @single
+                  year @single }
+              }
+            }
+          oc: >
+            {
+              id @single
+              ... on OC {
+                title @single
+                description @single
+                url @single
+              }
+            }
+          spc: >
+            {
+              id @single
+              ... on SPC {
+                title @single
+                description @single
+                url @single
+              }
+            }
+          pc: >
+            {
+              id @single
+              ... on PC {
+                title @single
+                description @single
+                url @single
+              }
+            }
+          seminar: >
+            {
+              id @single
+              ... on Seminar {
+                label @single
+                title @single
+                description @single
+                temporalCoverage @single
+                url @single
+              }
+            }
+          editor: >
+            {
+              id @single
+              ... on Editor {
+                title @single
+                description @single
+                url @single
+              }
+            }
+          associate-editor: >
+            {
+              id @single
+              ... on AssociateEditor {
+                title @single
+                description @single
+                url @single
+              }
+            }
+          guest-editor: >
+            {
+              id @single
+              ... on GuestEditor {
+                title @single
+                description @single
+                url @single
+              }
+            }
+          journal-reviewer: >
+            {
+              id @single
+              ... on JournalReviewer {
+                title @single
+                description @single
+                url @single
+              }
+            }
+          reviewer: >
+            {
+              id @single
+              ... on Reviewer {
+                title @single
+                description @single
+                url @single
+              }
+            }
+          thesis: >
+            {
+              id @single
+              ... on ThesisAuthor {
+                label @single
+                name @single
+                url @single
+              }
+            }
+          speaker: >
+            {
+              id @single
+              ... on Speaker {
+                label @single
+                name @single
+                url @single
+              }
+            }
+          project: >
+            {
+              id @single
+              ... on Project {
+                label @single
+                abstract @single
+                website {
+                  url @single }
+              }
+            }
+        json-ld-context: >
+          {
+            "@context": {
+              "label": { "@id": "http://www.w3.org/2000/01/rdf-schema#label", "@language": "en" },
+              "label2": "http://www.w3.org/2000/01/rdf-schema#label",
+              "Article": "http://schema.org/ScholarlyArticle",
+              "OC": "http://sabrinakirrane.com/profile-ontology/Organising-Committee",
+              "PC": "http://sabrinakirrane.com/profile-ontology/Program-Committee",
+              "SPC": "http://sabrinakirrane.com/profile-ontology/Senior-Program-Committee",
+              "Project": "http://sabrinakirrane.com/profile-ontology/Project",
+              "Seminar": "http://sabrinakirrane.com/profile-ontology/Invited-Seminar-Participant",
+              "Editor": "http://sabrinakirrane.com/profile-ontology/Editorial-Board-Member",
+              "GuestEditor": "http://sabrinakirrane.com/profile-ontology/Guest-Editor",
+              "AssociateEditor": "http://sabrinakirrane.com/profile-ontology/Associate-Editor",
+              "JournalReviewer": "http://sabrinakirrane.com/profile-ontology/Journal_Reviewer",
+              "Reviewer": "http://sabrinakirrane.com/profile-ontology/Reviewer",
+              "Speaker": "http://sabrinakirrane.com/profile-ontology/Speaker",
+              "ThesisAuthor": "http://sabrinakirrane.com/profile-ontology/Thesis-Author",
+              "Member": "http://sabrinakirrane.com/profile-ontology/Member",
+              "url": "http://ogp.me/ns#url",
+              "website": "http://sabrinakirrane.com/profile-ontology/website",
+              "abstract": "http://sabrinakirrane.com/profile-ontology/abstract",
+              "author": "http://schema.org/author",
+              "authorlist": "https://w3id.org/scholarlydata/ontology/conference-ontology.owl#hasAuthorList",
+              "publication": "http://schema.org/publication",
+              "year": "http://schema.org/temporalCoverage",
+              "temporalCoverage": "http://schema.org/temporalCoverage",
+              "name": "http://schema.org/name",
+              "title": "http://ogp.me/ns#title",
+              "description": "http://ogp.me/ns#description"
+            }
+          }
+      responses:
+        200:
+          description: list of distributors of movies starring Al Pacino
+          x-walder-input-text/html: skirrane.handlebars
+x-walder-errors:
+  404:
+    description: page not found error
+    x-walder-input-text/html: error404.html
+  500:
+    description: internal server error
+    x-walder-input-text/html: error500.html
